@@ -16,8 +16,7 @@ class Main {
         while (true) {
             var nfiles = getFiles(obj.path, obj.extension);
             for (fi in nfiles.keyValueIterator()) {
-                var old = files[fi.key];
-                if (old.mtime.getTime() != fi.value.mtime.getTime()) {
+                if (!files.exists(fi.key) || (files[fi.key].mtime.getTime() != fi.value.mtime.getTime())) {
                     Sys.println("File change detected. Compiling...");
                     Sys.command(obj.command);
                     Sys.println("Done.");
