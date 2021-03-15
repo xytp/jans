@@ -12,7 +12,7 @@ First, create a json file with a content like this :
 ```json
 {
     "path": "path-to-your-souce-code",
-    "extension": "your-code-extension",
+    "extension": ["your-code-extension-1", "your-code-extension-2", "..."],
     "command": "your compile command",
     "delay": 1
 }
