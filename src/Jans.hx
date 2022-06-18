@@ -46,7 +46,7 @@ class Jans {
 			var trueFilePath = '${path}/${filePath}';
 			if (FileSystem.isDirectory(trueFilePath)) {
 				if (AFileWasSaved(trueFilePath, extension)) {
-					return false;
+					return true;
 				}
 			}
 		}
