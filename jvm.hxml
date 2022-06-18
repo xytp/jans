@@ -1,2 +1,2 @@
---jvm bin/Jans.jar
---main src.Main
+--jvm bin/jans.jar
+--main src.Jans

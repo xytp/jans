@@ -6,7 +6,7 @@ import sys.FileSystem;
 
 using Lambda;
 
-class Main {
+class Jans {
 	static private var now:Date = Date.now();
 
 	static public function main() {
