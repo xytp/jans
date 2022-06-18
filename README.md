@@ -18,8 +18,9 @@ First, create a json file with a content like this :
 }
 ```
 
-Then, run the program in your cli with the path to the json as the first agrument.
+Then `jans your-config.json`.
+Jans is complied with the use of jans itself, so if you have haxe, you can try it on this repo alone.
 
 ## How to build
 
-Jans is entierly written in Haxe, so it should support most target with filesystem support, like java and cpp. To build, you only need a recent version of Haxe and then run `Haxe [target].hxml` with [target] currently being java or cpp.
+Jans is entierly written in Haxe, so it should support most target with filesystem support, like java and cpp. To build, you only need a recent version of Haxe and then run `Haxe [target].hxml` with [target] currently being java, jvm or cpp.

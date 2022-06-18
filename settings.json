@@ -1,0 +1,8 @@
+{
+    "path": "src",
+    "extension": [
+        "hx"
+    ],
+    "command": "haxe jvm.hxml",
+    "delay": 1
+}
