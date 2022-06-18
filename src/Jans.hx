@@ -10,7 +10,9 @@ class Jans {
 	static private var now:Date = Date.now();
 
 	static public function main() {
-		var data = Sys.args()[0];
+		var args = Sys.args();
+		var data = if (args.length > 0) args[0] else "./jans.config.json";
+
 		var content = File.getContent(data);
 		var obj:src.DataFormat = haxe.Json.parse(content);
 
