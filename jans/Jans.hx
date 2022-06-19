@@ -1,5 +1,3 @@
-package src;
-
 import haxe.io.Path;
 import sys.io.File;
 import sys.FileSystem;
@@ -11,10 +9,17 @@ class Jans {
 
 	static public function main() {
 		var args = Sys.args();
-		var data = if (args.length > 0) args[0] else "./jans.config.json";
+
+		#if sys
+		var position = 1;
+		#else
+		var position = 0;
+		#end
+
+		var data = if (args.length > position) args[position] else "./jans.config.json";
 
 		var content = File.getContent(data);
-		var obj:src.DataFormat = haxe.Json.parse(content);
+		var obj:DataFormat = haxe.Json.parse(content);
 
 		Sys.println("Starting observation...");
 

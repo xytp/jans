@@ -1,2 +1,3 @@
+--class-path jans
 --jvm bin/jans.jar
---main src.Jans
+--main Jans

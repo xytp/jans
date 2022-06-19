@@ -1,0 +1,18 @@
+{
+    "name": "jans",
+    "url": "https://github.com/xytp/jans",
+    "license": "Public",
+    "tags": [
+        "tool",
+        "compilation"
+    ],
+    "description": "Tiny language agnostic tool to autocompile on file change.",
+    "version": "0.0.1",
+    "classPath": "jans/",
+    "releasenote": "Initial release.",
+    "contributors": [
+        "HellperKK"
+    ],
+    "dependencies": {},
+    "main": "Jans"
+}
