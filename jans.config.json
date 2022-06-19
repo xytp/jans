@@ -3,6 +3,6 @@
     "extension": [
         "hx"
     ],
-    "command": "haxe jvm.hxml",
+    "command": "haxe cpp.hxml",
     "delay": 1
 }
