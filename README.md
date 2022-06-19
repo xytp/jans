@@ -19,6 +19,16 @@ First, create a json file with a content like this :
 ```
 
 Then `jans your-config.json`.
+
+Alternatively, you can run jans through haxelib like this.
+
+```
+haxelib install jans
+haxelib run jans your-config.json
+```
+
+With no config file provided, jans will try to open `jans.config.json`
+
 Jans is complied with the use of jans itself, so if you have haxe, you can try it on this repo alone.
 
 ## How to build
