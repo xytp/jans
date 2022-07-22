@@ -9,14 +9,15 @@ Jans is a tiny language-agnostic tool to automate compilation. Feed it with a js
 
 First, create a json file with a content like this :
 
-```json
+```js
 {
     "path": "path-to-your-souce-code",
     "extension": ["your-code-extension-1", "your-code-extension-2", "..."],
     "command": "your compile command",
-    "delay": 1
+    "delay": 1 
 }
 ```
+The `delay` parameter sets the sleep time between each check.
 
 Then `jans your-config.json`.
 
@@ -27,10 +28,10 @@ haxelib install jans
 haxelib run jans your-config.json
 ```
 
-With no config file provided, jans will try to open `jans.config.json`
+With no config file provided, jans will try to open `jans.config.json` in the current directory.
 
 Jans is complied with the use of jans itself, so if you have haxe, you can try it on this repo alone.
 
 ## How to build
 
-Jans is entierly written in Haxe, so it should support most target with filesystem support, like java and cpp. To build, you only need a recent version of Haxe and then run `Haxe [target].hxml` with [target] currently being java, jvm or cpp.
+```haxe cpp.hxml```

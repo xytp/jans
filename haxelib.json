@@ -7,9 +7,9 @@
         "compilation"
     ],
     "description": "Tiny language agnostic tool to autocompile on file change.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "classPath": "jans/",
-    "releasenote": "Initial release.",
+    "releasenote": "Optimized the way save times are compared",
     "contributors": [
         "HellperKK"
     ],

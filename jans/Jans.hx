@@ -28,8 +28,8 @@ class Jans {
 				Sys.println("File change detected. Compiling...");
 				Sys.command(obj.command);
 				Sys.println("Done.");
+				now = Date.now();
 			}
-			now = Date.now();
 
 			Sys.sleep(obj.delay);
 		}
