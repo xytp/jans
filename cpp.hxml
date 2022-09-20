@@ -1,3 +1,4 @@
 --class-path jans
 --main Jans
 --cpp bin/cpp
+-D bin

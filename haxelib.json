@@ -7,9 +7,9 @@
         "compilation"
     ],
     "description": "Tiny language agnostic tool to autocompile on file change.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "classPath": "jans/",
-    "releasenote": "Optimized the way save times are compared",
+    "releasenote": "Fixed the distinction between bin and command code. Command should now work.",
     "contributors": [
         "HellperKK"
     ],

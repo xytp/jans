@@ -10,13 +10,19 @@ class Jans {
 	static public function main() {
 		var args = Sys.args();
 
-		#if sys
-		var position = 1;
-		#else
-		var position = 0;
+		#if !bin
+		var userDir = args.pop();
+		Sys.setCwd(userDir);
 		#end
 
-		var data = if (args.length > position) args[position] else "./jans.config.json";
+		var position = 0;
+
+		var data = if (args.length <= position) "./jans.config.json" else args[position];
+
+		if (!FileSystem.exists(data)) {
+			Sys.println('file ${data} does not exist');
+			Sys.exit(0);
+		}
 
 		var content = File.getContent(data);
 		var obj:DataFormat = haxe.Json.parse(content);
