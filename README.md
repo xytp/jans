@@ -7,7 +7,7 @@ Jans is a tiny language-agnostic tool to automate compilation. Feed it with a js
 
 ## How to use
 
-First, create a json file with a content like this :
+First, type the command `jans --init` that will create a json file named `jans.config.json` with a content like this:
 
 ```json
 {
@@ -17,15 +17,17 @@ First, create a json file with a content like this :
     "delay": 1 
 }
 ```
-The `delay` parameter sets the sleep time between each check.
+Then change it depending of your project requirements.
+The `delay` parameter sets the sleep time between each check, in seconds.
 
-Then `jans your-config.json`.
+Then `jans --run your-config.json`.
 
 Alternatively, you can run jans through haxelib like this.
 
-```
+```bash
 haxelib install jans
-haxelib run jans your-config.json
+haxelib run jans --init #to init your config
+haxelib run jans --run your-config.json #to run your compilation
 ```
 
 With no config file provided, jans will try to open `jans.config.json` in the current directory.

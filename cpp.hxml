@@ -1,4 +1,4 @@
 --class-path jans
---main Jans
+--main Executable
 --cpp bin/cpp
--D bin
+--library mcli

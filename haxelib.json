@@ -7,12 +7,14 @@
         "compilation"
     ],
     "description": "Tiny language agnostic tool to autocompile on file change.",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "classPath": "jans/",
     "releasenote": "Fixed the distinction between bin and command code. Command should now work.",
     "contributors": [
         "HellperKK"
     ],
-    "dependencies": {},
-    "main": "Jans"
+    "dependencies": {
+        "mcli": "0.1.7"
+    },
+    "main": "Command"
 }
