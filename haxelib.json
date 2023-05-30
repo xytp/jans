@@ -7,9 +7,9 @@
         "compilation"
     ],
     "description": "Tiny language agnostic tool to autocompile on file change.",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "classPath": "jans/",
-    "releasenote": "Fixed the distinction between bin and command code. Command should now work.",
+    "releasenote": "Changed the json format to have multiple rules.",
     "contributors": [
         "HellperKK"
     ],

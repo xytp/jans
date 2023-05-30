@@ -7,22 +7,23 @@ using Lambda;
 class Jans extends mcli.CommandLine {
 	private var now:Date = Date.now();
 
-	private function AFileWasSaved(path:String, extension:Array<String>):Bool {
+	private function AFileWasSaved(path:String, extensions:Array<String>, excludes:Array<String>):Bool {
 		var filePaths = FileSystem.readDirectory(path);
 
 		for (filePath in filePaths) {
 			var trueFilePath = '${path}/${filePath}';
-			if (!FileSystem.isDirectory(trueFilePath) && extension.has(Path.extension(trueFilePath))) {
+			if (excludes.contains(trueFilePath)) {
+				continue;
+			}
+
+			if (!FileSystem.isDirectory(trueFilePath) && (extensions.contains("*") || extensions.contains(Path.extension(trueFilePath)))) {
 				if (FileSystem.stat(trueFilePath).mtime.getTime() > now.getTime()) {
 					return true;
 				}
 			}
-		}
 
-		for (filePath in filePaths) {
-			var trueFilePath = '${path}/${filePath}';
 			if (FileSystem.isDirectory(trueFilePath)) {
-				if (AFileWasSaved(trueFilePath, extension)) {
+				if (AFileWasSaved(trueFilePath, extensions, excludes)) {
 					return true;
 				}
 			}
@@ -48,11 +49,16 @@ class Jans extends mcli.CommandLine {
 		Sys.println("Starting observation...");
 
 		while (true) {
-			if (AFileWasSaved(obj.path, obj.extension)) {
-				Sys.println("File change detected. Compiling...");
-				Sys.command(obj.command);
-				Sys.println("Done.");
-				now = Date.now();
+			for (rule in obj.rules) {
+				if (AFileWasSaved(rule.path, rule.extensions, rule.excludes)) {
+					Sys.println('File change detected for rule "${rule.name}". Compiling...');
+
+					var commands = rule.command.copy();
+					Sys.command(commands.shift(), commands);
+
+					Sys.println("Done.");
+					now = Date.now();
+				}
 			}
 
 			Sys.sleep(obj.delay);
@@ -65,10 +71,23 @@ class Jans extends mcli.CommandLine {
 	public function init() {
 		var content = '
 {
-    "path": "path-to-your-souce-code",
-    "extension": ["your-code-extension-1", "your-code-extension-2"],
-    "command": "your compile command",
-    "delay": 1 
+	"rules": [
+		{
+			"name": "the rule name",
+			"path": "the path to check",
+			"excludes": ["file to exclude 1", "directory to exclude 1"],
+			"extensions": [
+				"your file extension 1",
+				"your file extension 2"
+			],
+			"command": [
+				"your command",
+				"your command parameter 1",
+				"your command parameter 2"
+			]
+		}
+	],
+	"delay": 1
 }
 			';
 		var fileName = "./jans.config.json";

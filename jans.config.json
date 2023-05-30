@@ -1,8 +1,17 @@
 {
-    "path": "jans",
-    "extension": [
-        "hx"
+    "rules": [
+        {
+            "name": "Haxe code",
+            "path": "jans",
+            "excludes": [],
+            "extensions": [
+                "hx"
+            ],
+            "command": [
+                "haxe",
+                "cpp.hxml"
+            ]
+        }
     ],
-    "command": "haxe cpp.hxml",
     "delay": 1
 }

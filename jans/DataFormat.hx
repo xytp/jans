@@ -1,6 +1,4 @@
 typedef DataFormat = {
-	var path:String;
-	var extension:Array<String>;
-	var command:String;
+	var rules:Array<Rule>;
 	var delay:Float;
 }

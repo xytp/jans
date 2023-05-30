@@ -11,13 +11,26 @@ First, type the command `jans --init` that will create a json file named `jans.c
 
 ```json
 {
-    "path": "path-to-your-souce-code",
-    "extension": ["your-code-extension-1", "your-code-extension-2", "..."],
-    "command": "your compile command",
-    "delay": 1 
+	"rules": [
+		{
+			"name": "the rule name",
+			"path": "the path to check",
+			"excludes": ["file to exclude 1", "directory to exclude 1"],
+			"extensions": [
+				"your file extension 1",
+				"your file extension 2"
+			],
+			"command": [
+				"your command",
+				"your command parameter 1",
+				"your command parameter 2"
+			]
+		}
+	],
+	"delay": 1
 }
 ```
-Then change it depending of your project requirements.
+Then change it depending of your project requirements. you can have as much rules as you want.
 The `delay` parameter sets the sleep time between each check, in seconds.
 
 Then `jans --run your-config.json`.
